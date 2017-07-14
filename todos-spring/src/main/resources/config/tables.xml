@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="todos" id="1446477393227-634">
+        <createTable tableName="SYS_ALG">
+            <column name="BEMERKUNG" type="VARCHAR2(100)" />
+            <column name="BEREICH" type="CHAR(40)">
+                <constraints nullable="false" />
+            </column>
+            <column defaultValueNumeric="0" name="MANDANT_NO" type="NUMBER(11, 0)">
+                <constraints nullable="false" />
+            </column>
+            <column name="SCHLUESSEL" type="VARCHAR2(100)">
+                <constraints nullable="false" />
+            </column>
+            <column name="WERT" type="VARCHAR2(300)" />
+        </createTable>
+    </changeSet>
+   
+   
+<!--    CREATE TABLE user ( -->
+<!--   id int IDENTITY NOT NULL PRIMARY KEY, -->
+<!--   name varchar(32) DEFAULT NULL, -->
+<!--   email varchar(32) NOT NULL, -->
+<!--   password varchar(32) DEFAULT NULL -->
+<!-- ); -->
+
+<!-- ALTER TABLE user ADD CONSTRAINT unique_email UNIQUE (email); -->
+
+<!-- CREATE TABLE Task ( -->
+<!--   id int IDENTITY NOT NULL PRIMARY KEY, -->
+<!--   userId int NOT NULL, -->
+<!--   title varchar(512) DEFAULT NULL, -->
+<!--   done boolean DEFAULT FALSE NOT NULL, -->
+<!--   priority tinyint NOT NULL, -->
+<!--   dueDate date DEFAULT NULL -->
+<!-- ); -->
+
+<!-- alter table todo add constraint user_fk foreign key (userId) references user(id); -->
+</databaseChangeLog>

@@ -1,0 +1,158 @@
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ * ATRON electronic GmbH ("ATRON") CONFIDENTIAL                               *
+ * Unpublished Copyright (c) 2008-2020 ATRON electronic GmbH, All Rights      *
+ * Reserved.                                                                  *
+ *                                                                            *
+ * NOTICE: All information contained herein is, and remains the property of   *
+ * ATRON. The intellectual and technical concepts contained herein are        *
+ * proprietary to ATRON and may be covered by U.S. and Foreign Patents,       *
+ * patents in process, and are protected by trade secret or copyright law.    *
+ * Dissemination of this information or reproduction of this material is      *
+ * strictly forbidden unless prior written permission is obtained             *
+ * from ATRON. Access to the source code contained herein is hereby forbidden *
+ * to anyone except current ATRON employees, managers or contractors who have *
+ * executed. Confidentiality and Non-disclosure agreements explicitly         *
+ * covering such access.                                                      *
+ *                                                                            *
+ *                                                                            *
+ * The copyright notice above does not evidence any actual or intended        *
+ * publication or disclosure of this source code, which includes information  *
+ * that is confidential and/or proprietary, and is a trade secret, of ATRON.  *
+ * ANY REPRODUCTION, MODIFICATION, DISTRIBUTION, PUBLIC PERFORMANCE, OR       *
+ * PUBLIC DISPLAY OF OR THROUGH USE OF THIS SOURCE CODE WITHOUT THE EXPRESS   *
+ * WRITTEN CONSENT OF ATRON IS STRICTLY PROHIBITED, AND IN VIOLATION OF       *
+ * APPLICABLE LAWS AND INTERNATIONAL TREATIES. THE RECEIPT OR POSSESSION OF   *
+ * THIS SOURCE CODE AND/OR RELATED INFORMATION DOES NOT CONVEY OR IMPLY ANY   *
+ * RIGHTS TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO            *
+ * MANUFACTURE, USE, OR SELL ANYTHING THAT IT MAY DESCRIBE, IN WHOLE OR IN    *
+ * PART.                                                                      *
+ *                                                                            *
+ * $$Id: $$                                                                   *
+ *++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Garamond';
+    font-size: 0.8em;
+}
+
+html, body, div, img, a, p {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.full {
+    width: 50em;
+    margin: 0 auto;
+}
+
+.task {
+    font-size: 1.1em;
+    padding: 0.3em 0;
+    border-bottom: 1px dotted #ccc;
+    clear:both;
+}
+
+.task.finished {
+    text-decoration: line-through;
+}
+
+.task:hover {
+    background: #eee;
+}
+
+#tasks .task:hover .button {
+    display: inline-block;
+}
+
+.button {
+    display: inline-block;
+    background: linear-gradient(to bottom, #ccc , #aaa);
+    padding: 0.2em;
+    border: 1px solid #aaa;
+    cursor: pointer;
+    font-size: 1.0em;
+    border-radius: 0.2em;
+    box-shadow: 0 0 0.2em #aaa;
+}
+
+.button:hover {
+    background: linear-gradient(to bottom, #dcdcdc, #bababa);
+}
+
+.button:active {
+    background: linear-gradient(to top, #dcdcdc, #bababa);
+}
+
+#tasks .button {
+    text-align: center;
+    font-size: 0.75em;
+    padding: 0.125em 0.1em;
+    margin-right: 0.4em;
+    display: none;
+    float: right;
+}
+
+.invisible {
+    position: absolute;
+    left: -9999px;
+}
+
+.hide {
+    display: none;
+}
+
+input.error {
+    border: 1px solid #f00;
+    color: #f00;
+}
+
+input[type=text] {
+    width: 25em;
+    margin: 0 0.2em 0 0;
+    border: 1px solid #bbb;
+    border-radius: 0.2em;
+    height: 1.4em;
+    font-size: 1em;
+    padding: 0.2em;
+    vertical-align: top;
+}
+
+.task input[type=text] {
+    font-size: 0.8em;
+    height: auto;
+    border: none;
+}
+
+form.editTask {
+    display: inline;
+}
+
+form#filterTasks {
+    margin-bottom: 0.4em;
+}
+
+div#tasks {
+    margin-top: 1.4em;
+    font-size: 1.2em;
+}
+
+div#loading {
+    margin-top: 1.2em;
+    font-size: 1.2em;
+}
+
+.context {
+    color: #6cf;
+    cursor: pointer;
+}

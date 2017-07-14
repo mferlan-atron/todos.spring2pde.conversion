@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="maike (generated)" id="1446647807989-1">
+
+        <insert tableName="TICKET">
+            <column name="AT_NO" valueNumeric="0" />
+            <column name="CONNECT_NEXT" valueNumeric="0" />
+            <column name="CONNECT_PREV" valueNumeric="0" />
+            <column name="CONTRACT_TARIFF" valueNumeric="0" />
+            <column name="CUST_TYPE_NO" />
+            <column name="DAXPROPS_GROUP" />
+            <column name="DAYS_VALID" valueNumeric="1" />
+            <column name="DRUCK1" value="Schülerzeitkarte" />
+            <column name="DRUCK2" value="Halle Grundkarte" />
+            <column name="DRUCK3" />
+            <column name="DRUCK4" />
+            <column name="ETICK_OUT" valueNumeric="1" />
+            <column name="FORMTYP_KK" />
+            <column name="FORMULARTYP_ID" />
+            <column name="FQ_CODE" />
+            <column name="GILT_GRUPPE" valueNumeric="10" />
+            <column name="GUELTIGKEIT_KK" valueNumeric="0" />
+            <column name="IS_KONTING" valueNumeric="0" />
+            <column name="JOURNEYS_PER_PERIOD" valueNumeric="0" />
+            <column name="LAYOUT_GROUP_ID" valueNumeric="2000" />
+            <column name="MANDANT_NO" valueNumeric="0" />
+            <column name="MAX_PERSON" valueNumeric="1" />
+            <column name="MEDIUM" valueNumeric="0" />
+            <column name="MINDESTPREIS" valueNumeric="0" />
+            <column name="MIN_PERSON" valueNumeric="1" />
+            <column name="MPERS" valueNumeric="0" />
+            <column name="OR_VALRULES" valueNumeric="0" />
+            <column name="PERIOD_LENGHT" valueNumeric="0" />
+            <column name="PRIOR_ACTIVATED" valueNumeric="0" />
+            <column name="PRIOR_NOTACTIVATED" valueNumeric="0" />
+            <column name="REBATE_NO" valueNumeric="0" />
+            <column name="REF_TICKET" valueNumeric="0" />
+            <column name="RULE_ID" valueNumeric="0" />
+            <column name="SALE_EDR" valueNumeric="1" />
+            <column name="SPECIAL_RULES" valueNumeric="0" />
+            <column name="SPECK_LAYOUT" valueNumeric="0" />
+            <column name="TAB_TYPE" valueNumeric="0" />
+            <column name="TARIFART_NO" />
+            <column name="TARIFF_NO" valueNumeric="18" />
+            <column name="TICKETINFO" />
+            <column name="TICKET_NO" valueNumeric="1451" />
+            <column name="TICKET_SHORT" />
+            <column name="TICK_OUT" valueNumeric="1" />
+            <column name="UMSTIEG" valueNumeric="0" />
+            <column name="UST_ID" valueNumeric="1" />
+            <column name="VALIDITY_CONSTR" valueNumeric="1" />
+            <column name="VERKEHR" valueNumeric="1" />
+            <column name="VZEITRAUM" />
+            <column name="ZARTGRP_NR" />
+        </insert>
+        <insert tableName="SYS_ALG">
+            <column name="BEMERKUNG" value="Niedrigste Id von angelegten Vzeit, Vz_Time... (Default 1000)" />
+            <column name="BEREICH" value="MDV_KR_IMPORT                           " />
+            <column name="MANDANT_NO" valueNumeric="0" />
+            <column name="SCHLUESSEL" value="START_ID" />
+            <column name="WERT" value="1000" />
+        </insert>
+        <insert tableName="SYS_ALG">
+            <column name="BEMERKUNG" value="Höchste Id von TrAreas, die automatisch gelöscht werden (Default 11000)" />
+            <column name="BEREICH" value="MDV_KR_IMPORT                           " />
+            <column name="MANDANT_NO" valueNumeric="0" />
+            <column name="SCHLUESSEL" value="AREA_LIMIT" />
+            <column name="WERT" value="11000" />
+        </insert>
+        <insert tableName="SYS_ALG">
+            <column name="BEMERKUNG" value="TariffID, muss gesetzt sein" />
+            <column name="BEREICH" value="MDV_KR_IMPORT                           " />
+            <column name="MANDANT_NO" valueNumeric="0" />
+            <column name="SCHLUESSEL" value="TARIFF" />
+            <column name="WERT" value="18" />
+        </insert>
+        <insert tableName="SYS_ALG">
+            <column name="BEMERKUNG" value="Absoluter Pfad zu den Extra-Area Dateien, einschließlich tables" />
+            <column name="BEREICH" value="MDV_KR_IMPORT                           " />
+            <column name="MANDANT_NO" valueNumeric="0" />
+            <column name="SCHLUESSEL" value="EXTRA_AREA_PATH" />
+            <column name="WERT" value="../mdv.krimp.test/src/resources/extra_areas" />
+        </insert>
+        <insert tableName="SYS_ALG">
+            <column name="BEMERKUNG" value="VerkehrID, muss gesetzt sein" />
+            <column name="BEREICH" value="MDV_KR_IMPORT                           " />
+            <column name="MANDANT_NO" valueNumeric="0" />
+            <column name="SCHLUESSEL" value="VERKEHR" />
+            <column name="WERT" value="1" />
+        </insert>
+        <insert tableName="SYS_ALG">
+            <column name="BEMERKUNG" value="Gerätenummer, die spezifiziert welche Symbole importiert werden." />
+            <column name="BEREICH" value="MDV_KR_IMPORT                           " />
+            <column name="MANDANT_NO" valueNumeric="0" />
+            <column name="SCHLUESSEL" value="DEVICE_TYPE_ID" />
+            <column name="WERT" value="9" />
+        </insert>
+        <insert tableName="VZ_TAG">
+            <column name="AT_NO" valueNumeric="0" />
+            <column name="MANDANT_NO" valueNumeric="0" />
+            <column name="tage_nr" valueNumeric="0" />
+            <column name="TAG_NAME" value="NOT A DAY" />
+        </insert>
+        <insert tableName="VZ_TIME">
+            <column name="AT_NO" valueNumeric="0" />
+            <column name="MANDANT_NO" valueNumeric="0" />
+            <column name="ZEITEN_NR" valueNumeric="1" />
+            <column name="ZEIT_NAME" value="1                             " />
+        </insert>
+        <insert tableName="VZ_TIME">
+            <column name="AT_NO" valueNumeric="0" />
+            <column name="MANDANT_NO" valueNumeric="0" />
+            <column name="ZEITEN_NR" valueNumeric="0" />
+            <column name="ZEIT_NAME" value="0                             " />
+        </insert>
+        <!-- <insert tableName="VZEIT"> <column name="AT_NO" valueNumeric="0"/> <column name="FEIERTG" value="0 "/> <column name="MANDANT_NO" valueNumeric="0"/> <column name="TAGE_INCLEXCL" valueNumeric="1"/> <column name="TAGE_NR"/> <column name="TARIFF_NO"/> <column name="WOCHENTG" value="1111111"/> <column name="ZEITEN_INCLEXCL" valueNumeric="1"/> <column name="ZEITEN_NR"/> <column name="ZEITRAUM" valueNumeric="1"/> <column name="ZEITRAUM_DESC"/> <column name="ZEITRAUM_NAME" value="MDV-Tarifdatenbank "/> </insert> <insert tableName="VZEIT"> <column name="AT_NO" valueNumeric="0"/> <column name="FEIERTG"/> <column name="MANDANT_NO" valueNumeric="0"/> <column name="TAGE_INCLEXCL" valueNumeric="1"/> <column name="TAGE_NR"/> <column name="TARIFF_NO" valueNumeric="0"/> <column name="WOCHENTG"/> <column name="ZEITEN_INCLEXCL" valueNumeric="1"/> <column name="ZEITEN_NR"/> <column name="ZEITRAUM" valueNumeric="0"/> <column name="ZEITRAUM_DESC"/> <column name="ZEITRAUM_NAME"/> </insert> <insert 
+            tableName="VZEIT"> <column name="AT_NO" valueNumeric="0"/> <column name="FEIERTG"/> <column name="MANDANT_NO" valueNumeric="0"/> <column name="TAGE_INCLEXCL" valueNumeric="1"/> <column name="TAGE_NR"/> <column name="TARIFF_NO"/> <column name="WOCHENTG" value="1111111"/> <column name="ZEITEN_INCLEXCL" valueNumeric="0"/> <column name="ZEITEN_NR"/> <column name="ZEITRAUM" valueNumeric="2"/> <column name="ZEITRAUM_DESC"/> <column name="ZEITRAUM_NAME" value="TK-WK-MK "/> </insert> <insert tableName="VZEIT"> <column name="AT_NO" valueNumeric="0"/> <column name="FEIERTG"/> <column name="MANDANT_NO" valueNumeric="0"/> <column name="TAGE_INCLEXCL" valueNumeric="1"/> <column name="TAGE_NR"/> <column name="TARIFF_NO"/> <column name="WOCHENTG" value="000000 "/> <column name="ZEITEN_INCLEXCL" valueNumeric="1"/> <column name="ZEITEN_NR"/> <column name="ZEITRAUM" valueNumeric="3"/> <column name="ZEITRAUM_DESC"/> <column name="ZEITRAUM_NAME" value="SFT "/> </insert> -->
+        <insert tableName="VZ_TIMES">
+            <column name="AT_NO" valueNumeric="0" />
+            <column name="BONUS_NACH" valueNumeric="0" />
+            <column name="BONUS_VOR" valueNumeric="0" />
+            <column name="FOLGETAG" valueNumeric="1" />
+            <column name="LFD_NR" valueNumeric="1" />
+            <column name="MANDANT_NO" valueNumeric="0" />
+            <column name="ZEITEN_NR" valueNumeric="1" />
+            <column name="ZEIT_BIS" valueNumeric="14400" />
+            <column name="ZEIT_VON" valueNumeric="0" />
+        </insert>
+        <insert tableName="VZ_TIMES">
+            <column name="AT_NO" valueNumeric="0" />
+            <column name="BONUS_NACH" valueNumeric="0" />
+            <column name="BONUS_VOR" valueNumeric="0" />
+            <column name="FOLGETAG" valueNumeric="0" />
+            <column name="LFD_NR" valueNumeric="0" />
+            <column name="MANDANT_NO" valueNumeric="0" />
+            <column name="ZEITEN_NR" valueNumeric="0" />
+            <column name="ZEIT_BIS" valueNumeric="86399" />
+            <column name="ZEIT_VON" valueNumeric="0" />
+        </insert>
+    </changeSet>
+</databaseChangeLog>
