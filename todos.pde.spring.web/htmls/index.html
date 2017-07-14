@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TODO's</title>
+    <meta charset="utf-8"/>
+    <link href="style.css" rel="stylesheet" />
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="full">
+        <h1>Tasks</h1>
+        <form id="filterTasks" action="#">
+            <input name="filter" id="filterTasks_filter" placeholder="Filter tasks ..." type="text" />
+            <a class="filter button" href="#">Filter</a>
+            <a class="resetFilter button hide" href="#">Remove</a>
+            <input class="invisible" type="submit" />
+        </form>
+        <form id="addTask" action="#">
+            <input name="name" id="addTask_name" placeholder="Add new task ..." type="text" />
+            <a class="addTask button" href="#">Add</a>
+            <input class="invisible" type="submit" />
+        </form>
+        <div id="loading">Loading tasks ...</div>
+        <div id="tasks"></div>
+    </div>
+</body>
+</html>

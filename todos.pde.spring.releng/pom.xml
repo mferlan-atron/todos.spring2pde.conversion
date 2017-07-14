@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>de.atron.todos</groupId>
+	<artifactId>todos.pde.spring.releng</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<!-- Tycho properties -->
+		<tycho-version>0.23.0</tycho-version>
+		<tycho-groupid>org.eclipse.tycho</tycho-groupid>
+		<tycho.showEclipseLog>true</tycho.showEclipseLog>
+		<!-- Maven Plugin Versions -->
+		<assembly-version>2.4</assembly-version>
+		<replacer-version>1.4.1</replacer-version>
+		<!-- Project specific properties -->
+		<parent-dir>${basedir}</parent-dir>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<findbugs-version>3.0.1</findbugs-version>
+		<target-definition-path>${project.parent.relativePath}/../todos.pde.spring.releng/targetdefinition/todos</target-definition-path>
+	</properties>
+
+
+	<modules>
+		<module>features</module>
+		<module>bundles</module>
+		<module>tests</module>
+		<module>repository</module>
+	</modules>
+
+	<build>
+		<!-- To define the plugin version in your parent POM -->
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-versions-plugin</artifactId>
+					<version>${tycho-version}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+		<plugins>
+			<!-- Enable Tycho -->
+			<plugin>
+				<groupId>${tycho-groupid}</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+
+			<!-- Configure Source Encoding -->
+			<plugin>
+				<groupId>${tycho-groupid}</groupId>
+				<artifactId>tycho-compiler-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-source-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<executions>
+					<execution>
+						<id>plugin-source</id>
+						<goals>
+							<goal>plugin-source</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- Configure qualifier replacement -->
+			<plugin>
+				<groupId>${tycho-groupid}</groupId>
+				<artifactId>tycho-packaging-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<format>yyyyMMdd-HHmm</format>
+				</configuration>
+			</plugin>
+
+			<!-- Publish repository -->
+			<plugin>
+				<groupId>${tycho-groupid}</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<executionEnvironment>JavaSE-1.8</executionEnvironment>
+					<pomDependencies>consider</pomDependencies>
+					<targetDefinitionIncludeSource>honor</targetDefinitionIncludeSource>
+					<target>
+						<artifact>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>${project.artifactId}</artifactId>
+							<version>${project.version}</version>
+							<classifier>${target-definition-path}</classifier>
+						</artifact>
+					</target>
+					<environments>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>						
+					</environments>
+				</configuration>
+			</plugin>
+
+
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.8</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

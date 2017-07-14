@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+<!--     <import resource="infrastructure-context.xml"/> -->
+
+    <!-- ========================== -->
+    <!--   Business configuration   -->
+    <!-- ========================== -->
+
+    <bean id="taskDao" class="de.atron.todos.business.dao.TaskDao"/>
+    
+    <bean id="filtersResource" class="de.atron.todos.business.FiltersResource"/>
+    <bean id="tasksResource" class="de.atron.todos.business.TasksResource"/>
+    <bean id="globalExceptionMapper" class="de.atron.todos.business.rest.GlobalExceptionMapper"/>
+    <bean id="exceptionMapper" class="de.atron.todos.business.rest.WebApplicationExceptionMapper"/>
+    
+    <bean id="gsonProvider" class="de.atron.todos.business.rest.gson.GsonProvider"/>
+<!--     <bean id="restApplication" class="de.atron.todos.business.rest.RESTConfiguration"/> -->
+
+</beans>

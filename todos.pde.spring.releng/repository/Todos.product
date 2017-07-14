@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="Todos" uid="de.atron.todos.pde.spring.product" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true">
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <programArgs>-nl de -consoleLog -console -clean
+      </programArgs>
+      <programArgsWin>-os win32 -ws win32 -arch x86_64
+      </programArgsWin>
+      <vmArgs>-Declipse.ignoreApp=true 
+-Dosgi.noShutdown=true 
+-Dorg.eclipse.rwt.compression=true 
+-Dorg.osgi.service.http.port=9000
+-Dorg.eclipse.equinox.http.jetty.log.stderr.threshold=info 
+-DAPPDATA_HOME=.
+-Dnet.sf.ehcache.skipUpdateCheck=true
+      </vmArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
+      </vmArgsMac>
+   </launcherArgs>
+
+   <windowImages i16="icons/AtriesServer_16x8.bmp" i32="icons/AtriesServer_32x8.bmp" i48="icons/AtriesServer_48x8.bmp" i64="icons/AtriesServer_64x8.bmp" i128="icons/AtriesServer_128x8.bmp"/>
+
+   <launcher name="Todos">
+      <solaris/>
+      <win useIco="false">
+         <ico path="icons/AtriesServer.ico"/>
+         <bmp
+            winSmallHigh="icons/AtriesServer_16x32.bmp"
+            winSmallLow="icons/AtriesServer_16x8.bmp"
+            winMediumHigh="icons/AtriesServer_32x32.bmp"
+            winMediumLow="icons/AtriesServer_32x8.bmp"
+            winLargeHigh="icons/AtriesServer_48x32.bmp"
+            winLargeLow="icons/AtriesServer_48x8.bmp"
+            winExtraLargeHigh="icons/AtriesServer_256x32.bmp"/>
+      </win>
+   </launcher>
+
+   <vm>
+      <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8</windows>
+   </vm>
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="de.atron.equinox.core.feature"/>
+      <feature id="de.atron.springframework.feature"/>
+      <feature id="de.atron.jetty.feature"/>
+      <feature id="jre.feature"/>
+      <feature id="de.atron.todos.pde.spring.nssm.config.win32.feature"/>
+      <feature id="de.atron.rs.feature" version="3.0.7"/>
+      <feature id="de.atron.todos.pde.spring.feature" version="1.0.0.qualifier"/>
+   </features>
+
+   <configurations>
+      <plugin id="com.eclipsesource.jaxrs.publisher" autoStart="true" startLevel="5" />
+      <plugin id="de.atron.todos.pde.spring" autoStart="true" startLevel="0" />
+      <plugin id="de.atron.todos.pde.spring.web" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.http.jetty" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+      <plugin id="org.springframework.osgi.extender" autoStart="true" startLevel="3" />
+   </configurations>
+
+</product>

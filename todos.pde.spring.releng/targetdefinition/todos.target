@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?><target name="todos" sequenceNumber="1">
+<locations>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
+<unit id="nssm.feature.feature.group" version="2.22.0"/>
+<unit id="de.atron.junit.feature.feature.group" version="3.0.7"/>
+<unit id="de.atron.springframework.feature.feature.group" version="3.0.7"/>
+<unit id="org.eclipse.ecf.core.feature.feature.group" version="1.1.0.v20150925-2135"/>
+<unit id="de.atron.hk2.feature.feature.group" version="3.0.7"/>
+<unit id="de.atron.rs.feature.feature.group" version="3.0.7"/>
+<unit id="org.eclipse.ecf.filetransfer.httpclient4.feature.feature.group" version="3.11.0.v20150925-2135"/>
+<unit id="org.eclipse.ecf.filetransfer.httpclient4.ssl.feature.feature.group" version="1.0.0.v20150925-2135"/>
+<unit id="jtlv.feature.feature.group" version="3.0.7"/>
+<unit id="org.activiti.core.feature.feature.group" version="3.0.7"/>
+<unit id="org.eclipse.equinox.executable.feature.group" version="3.6.200.v20150602-1417"/>
+<unit id="org.eclipse.equinox.p2.core.feature.feature.group" version="1.3.100.v20150527-1706"/>
+<unit id="org.eclipse.ecf.filetransfer.ssl.feature.feature.group" version="1.0.0.v20150925-2135"/>
+<unit id="org.slf4j.nop.feature.feature.group" version="3.0.7"/>
+<unit id="de.atron.equinox.rap.war.target.feature.feature.group" version="3.0.7"/>
+<unit id="de.atron.xmlrpc.feature.feature.group" version="3.0.7"/>
+<unit id="org.eclipse.ecf.core.ssl.feature.feature.group" version="1.0.0.v20150925-2135"/>
+<unit id="org.eclipse.ecf.filetransfer.feature.feature.group" version="3.11.0.v20150925-2135"/>
+<unit id="jre.feature.feature.group" version="1.8.0.72"/>
+<unit id="de.atron.javax.feature.feature.group" version="3.0.7"/>
+<unit id="org.liquibase.feature.feature.group" version="3.0.7"/>
+<unit id="de.atron.jersey.feature.feature.group" version="3.0.7"/>
+<unit id="de.atron.javax.xml.feature.feature.group" version="3.0.7"/>
+<unit id="de.atron.apache.xml.feature.feature.group" version="3.0.7"/>
+<unit id="de.atron.utility.feature.feature.group" version="3.0.7"/>
+<unit id="de.atron.hibernate.feature.feature.group" version="3.0.7"/>
+<unit id="ch.qos.logback.feature.feature.group" version="3.0.7"/>
+<unit id="de.atron.apache.commons.feature.feature.group" version="3.0.7"/>
+<unit id="de.atron.c3p0.feature.feature.group" version="3.0.7"/>
+<unit id="de.atron.javax.servlet.feature.feature.group" version="3.0.7"/>
+<unit id="de.atron.jetty.feature.feature.group" version="3.0.7"/>
+<unit id="org.slf4j.feature.feature.group" version="3.0.7"/>
+<unit id="de.atron.springframwork.test.feature.feature.group" version="3.0.7"/>
+<unit id="de.atron.globc.core.feature.feature.group" version="3.0.7"/>
+<unit id="de.atron.jdbc.drivers.feature.feature.group" version="3.0.7"/>
+<unit id="de.atron.equinox.core.feature.feature.group" version="3.0.7"/>
+<unit id="org.apache.log4j.feature.feature.group" version="3.0.7"/>
+<unit id="de.atron.ws.feature.feature.group" version="3.0.7"/>
+<repository location="http://git/platform/downloads/releases/v3.0.7/"/>
+</location>
+</locations>
+</target>

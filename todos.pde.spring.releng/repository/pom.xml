@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>todos.pde.spring.releng</artifactId>
+		<groupId>de.atron.todos</groupId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>..</relativePath>
+	</parent>
+
+	<artifactId>todos.pde.spring.repository</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>eclipse-repository</packaging>
+
+	<properties>
+		<alt.build.dir>../target</alt.build.dir>
+		<source.project>${project.basedir}</source.project>
+		<destination.project>${project.basedir}/../repository</destination.project>
+		<icons.source.folder>${source.project}/icons</icons.source.folder>
+		<icons.destination.folder>${destination.project}/icons</icons.destination.folder>
+
+		<relative.build.path>../target</relative.build.path>
+		<!-- war configuration -->
+		<war.product.id>de.atron.todos.pde.spring.product</war.product.id>
+		<war.product.path>${project.build.directory}/products/${war.product.id}/win32/win32/x86_64</war.product.path>
+		<war.product.relative.path>${relative.build.path}/products/${war.product.id}/win32/win32/x86_64</war.product.relative.path>
+		<war.product.filename>todos.pde.spring</war.product.filename>
+	</properties>
+
+	<build>
+		<directory>${alt.build.dir}</directory>
+		<plugins>
+			<!-- Copy ICONS folder from $icons.source.folder{} -->
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<dependencies>
+					<dependency>
+						<groupId>com.oopsconsultancy</groupId>
+						<artifactId>xmltask</artifactId>
+						<version>1.14</version>
+					</dependency>
+					<dependency>
+						<groupId>xalan</groupId>
+						<artifactId>xalan</artifactId>
+						<version>2.7.2</version>
+					</dependency>
+				</dependencies>
+				<executions>
+					<execution>
+						<phase>generate-resources</phase>
+						<configuration>
+							<tasks>
+								<!-- https://today.java.net/article/2006/10/31/xml-manipulation-using-xmltask -->
+								<copy todir="${icons.destination.folder}">
+									<fileset dir="${icons.source.folder}" includes="**/*" />
+								</copy>
+							</tasks>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- Configure the p2 director -->
+			<plugin>
+				<groupId>${tycho-groupid}</groupId>
+				<artifactId>tycho-p2-director-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<executions>
+					<execution>
+						<id>materialize-products</id>
+						<goals>
+							<goal>materialize-products</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>archive-products</id>
+						<goals>
+							<goal>archive-products</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<products>
+						<product>
+							<!-- select product with ID product.id; the archives get the classifiers 
+								"<os>.<ws>.<arch>" -->
+							<id>de.atron.todos.pde.spring.product</id>
+						</product>
+						<product>
+							<!-- select product with ID other.product.id for the classifiers "other-<os>.<ws>.<arch>" -->
+							<id>de.atron.todos.pde.spring.product</id>
+							<attachId>war</attachId>
+						</product>
+					</products>
+				</configuration>
+			</plugin>
+
+			<!-- Remove javax.servlet from the bundles.info -->
+			<plugin>
+				<groupId>com.google.code.maven-replacer-plugin</groupId>
+				<artifactId>maven-replacer-plugin</artifactId>
+				<version>${replacer-version}</version>
+				<executions>
+					<execution>
+						<id>replace-config-ini</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>replace</goal>
+						</goals>
+						<configuration>
+							<file>${war.product.relative.path}/configuration/config.ini</file>
+							<replacements>
+								<replacement>
+									<token>osgi.bundles=</token>
+									<value>osgi.bundles=org.eclipse.equinox.servletbridge.extensionbundle,</value>
+								</replacement>
+								<replacement>
+									<token>reference\\:file\\:javax.servlet.*?jar@4,</token>
+									<value></value>
+								</replacement>
+							</replacements>
+							<regexFlags>
+								<regexFlag>CASE_INSENSITIVE</regexFlag>
+								<regexFlag>UNIX_LINES</regexFlag>
+							</regexFlags>
+						</configuration>
+					</execution>
+					<execution>
+						<id>replace-bundles-info</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>replace</goal>
+						</goals>
+						<configuration>
+							<file>${war.product.relative.path}/configuration/org.eclipse.equinox.simpleconfigurator/bundles.info</file>
+							<replacements>
+								<replacement>
+									<token>javax.servlet,.*</token>
+									<value></value>
+								</replacement>
+								<replacement>
+									<token>.*jetty.*</token>
+									<value></value>
+								</replacement>
+							</replacements>
+							<regexFlags>
+								<regexFlag>CASE_INSENSITIVE</regexFlag>
+								<regexFlag>UNIX_LINES</regexFlag>
+							</regexFlags>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- Configure the assembly plugin to zip the war file -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>${assembly-version}</version>
+				<configuration>
+					<descriptors>
+						<descriptor>assembly.xml</descriptor>
+					</descriptors>
+					<!-- Configure the war's filename -->
+					<finalName>${war.product.filename}</finalName>
+					<appendAssemblyId>false</appendAssemblyId>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
