@@ -1,0 +1,14 @@
+swarm:
+    ds:
+        # Default datasource connection URL
+        connection:
+            url: jdbc:h2:mem:todosDS;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+        # Name of the default datasource
+        name: todosDS
+        # Default datasource connection user name
+        password: sa
+        username: sa
+        
+    # Defatul datasource JDBC driver name
+    jdbc:
+        driver: h2

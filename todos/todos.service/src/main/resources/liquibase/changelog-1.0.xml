@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+	<changeSet author="mferlan" id="create_tasks">
+		<createTable tableName="TASKS" tablespace="TODOS">
+			<column name="ID" type="NUMBER(11,0)">
+				<constraints primaryKey="true" primaryKeyName="TASKS_PK"
+					nullable="false" primaryKeyTablespace="TODOS_NDX" />
+			</column>
+			<column name="NAME" type="VARCHAR(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="PRIORITY" type="INTEGER" />
+			<column name="UPDATED" type="TIMESTAMP">
+				<constraints nullable="false" />
+			</column>
+			<column name="DUEDATE" type="DATE" />
+			<column name="FINISHED" type="BOOLEAN">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+	</changeSet>
+	
+	<changeSet author="mferlan" id="create_tasks_context">
+		<createTable tableName="TASKS_CONTEXTS" tablespace="TASKS">
+			<column name="TASK_ID" type="NUMBER(11,0)">
+				<constraints foreignKeyName="TASKS_CONTEXT_FK" 
+					nullable="false" referencedTableName="TASKS" referencedColumnNames="ID"/>
+			</column>
+			<column name="CONTEXTS" type="VARCHAR(255)">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+	</changeSet>	
+</databaseChangeLog>
