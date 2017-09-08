@@ -10,6 +10,10 @@
 		<module>todos.service</module>
 		<module>todos.gateway</module>
 		<module>todos.webapp</module>
+		<module>todos.filter</module>
+		
+		<module>todos.utilities</module>
+		<module>todos.resources</module>
 	</modules>
 
 

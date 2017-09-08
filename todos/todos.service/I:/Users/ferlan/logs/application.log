@@ -1,0 +1,232 @@
+2017-09-09 13:54:14,880 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 13:54:35,305 ERROR [TODOS] () (GlobalExceptionMapper) rest-exception: org.jboss.resteasy.spi.DefaultOptionsMethodException: RESTEASY003655: No resource method found for options, return OK with Allow header
+	at org.jboss.resteasy.core.registry.SegmentNode.match(SegmentNode.java:377)
+	at org.jboss.resteasy.core.registry.SegmentNode.match(SegmentNode.java:121)
+	at org.jboss.resteasy.core.registry.RootNode.match(RootNode.java:43)
+	at org.jboss.resteasy.core.registry.RootClassNode.match(RootClassNode.java:48)
+	at org.jboss.resteasy.core.ResourceMethodRegistry.getResourceInvoker(ResourceMethodRegistry.java:445)
+	at org.jboss.resteasy.core.SynchronousDispatcher.getInvoker(SynchronousDispatcher.java:264)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:201)
+	at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:221)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:56)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:51)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at org.wildfly.swarm.generated.FaviconErrorHandler.handleRequest(FaviconErrorHandler.java:62)
+	at io.undertow.server.handlers.PathHandler.handleRequest(PathHandler.java:94)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:292)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:138)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:272)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:104)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:211)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+2017-09-09 13:54:35,573 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 14:41:21,617 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 14:55:20,377 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 15:07:28,964 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 15:07:43,007 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 15:21:33,877 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 15:21:39,284 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 15:24:39,308 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 15:27:58,729 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 15:29:31,383 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 15:34:51,679 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 15:36:56,905 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 15:44:05,162 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 15:54:27,496 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 15:59:45,888 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 15:59:45,889 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:01:00,074 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:04:42,537 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:04:44,262 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:04:48,687 ERROR [TODOS] () (GlobalExceptionMapper) rest-exception: org.jboss.resteasy.spi.DefaultOptionsMethodException: RESTEASY003655: No resource method found for options, return OK with Allow header
+	at org.jboss.resteasy.core.registry.SegmentNode.match(SegmentNode.java:377)
+	at org.jboss.resteasy.core.registry.SegmentNode.match(SegmentNode.java:121)
+	at org.jboss.resteasy.core.registry.RootNode.match(RootNode.java:43)
+	at org.jboss.resteasy.core.registry.RootClassNode.match(RootClassNode.java:48)
+	at org.jboss.resteasy.core.ResourceMethodRegistry.getResourceInvoker(ResourceMethodRegistry.java:445)
+	at org.jboss.resteasy.core.SynchronousDispatcher.getInvoker(SynchronousDispatcher.java:264)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:201)
+	at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:221)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:56)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:51)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at org.wildfly.swarm.generated.FaviconErrorHandler.handleRequest(FaviconErrorHandler.java:62)
+	at io.undertow.server.handlers.PathHandler.handleRequest(PathHandler.java:94)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:292)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:138)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:272)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:104)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:211)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+2017-09-09 16:04:49,145 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:04:52,808 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:12:19,812 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:20:37,344 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:44:13,590 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:44:27,079 ERROR [TODOS] () (GlobalExceptionMapper) rest-exception: org.jboss.resteasy.spi.DefaultOptionsMethodException: RESTEASY003655: No resource method found for options, return OK with Allow header
+	at org.jboss.resteasy.core.registry.SegmentNode.match(SegmentNode.java:377)
+	at org.jboss.resteasy.core.registry.SegmentNode.match(SegmentNode.java:121)
+	at org.jboss.resteasy.core.registry.RootNode.match(RootNode.java:43)
+	at org.jboss.resteasy.core.registry.RootClassNode.match(RootClassNode.java:48)
+	at org.jboss.resteasy.core.ResourceMethodRegistry.getResourceInvoker(ResourceMethodRegistry.java:445)
+	at org.jboss.resteasy.core.SynchronousDispatcher.getInvoker(SynchronousDispatcher.java:264)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:201)
+	at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:221)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:56)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:51)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at org.wildfly.swarm.generated.FaviconErrorHandler.handleRequest(FaviconErrorHandler.java:62)
+	at io.undertow.server.handlers.PathHandler.handleRequest(PathHandler.java:94)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:292)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:138)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.api.LegacyThreadSetupActionWrapper$1.call(LegacyThreadSetupActionWrapper.java:44)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:272)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:104)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:211)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+2017-09-09 16:44:27,168 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:44:33,754 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:44:59,899 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:00,946 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:02,096 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:02,934 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:03,620 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:04,091 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:04,610 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:05,221 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:05,351 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:05,840 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:06,157 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:06,251 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:06,501 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:06,647 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:07,843 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:08,593 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:08,881 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:09,139 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:10,457 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:11,539 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:13,326 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:14,345 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:15,294 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:16,104 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:16,535 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:18,514 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:20,229 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:21,369 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:22,316 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:23,658 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:25,202 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:26,356 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:27,469 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:28,157 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:28,833 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:29,541 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:30,185 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:30,750 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:45:31,505 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:46:07,589 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:46:14,667 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:46:20,054 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:46:22,379 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:46:24,102 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:46:26,742 INFO  [TODOS] () (TaskDao) listAll - start
+2017-09-09 16:46:28,087 INFO  [TODOS] () (TaskDao) listAll - start

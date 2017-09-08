@@ -21,18 +21,17 @@
 			<scope>provided</scope>
 		</dependency>
 
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.liquibase</groupId> -->
+<!-- 			<artifactId>liquibase-core</artifactId> -->
+<!-- 			<version>3.4.1</version> -->
+<!-- 		</dependency> -->
 
-		<dependency>
-			<groupId>org.liquibase</groupId>
-			<artifactId>liquibase-core</artifactId>
-			<version>3.4.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.liquibase</groupId>
-			<artifactId>liquibase-cdi</artifactId>
-			<version>3.5.3</version>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.liquibase</groupId> -->
+<!-- 			<artifactId>liquibase-cdi</artifactId> -->
+<!-- 			<version>3.5.3</version> -->
+<!-- 		</dependency> -->
 
 
 		<!-- test dependencies -->
@@ -99,7 +98,24 @@
 			<artifactId>datasources</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>ma.glasnost.orika</groupId>
+			<artifactId>orika-core</artifactId>
+			<version>1.5.1</version>
+		</dependency>
 
+
+		<dependency>
+			<groupId>todos</groupId>
+			<artifactId>todos.utilities</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>todos</groupId>
+			<artifactId>todos.resources</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 	</dependencies>
 
 

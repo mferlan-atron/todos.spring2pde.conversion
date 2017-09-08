@@ -1,0 +1,12 @@
+swarm:
+  logging:
+    root-logger:
+      level: ALL
+    console-handlers:
+      CONSOLE:
+        level: ALL
+    loggers:
+      de.atron.todos:
+        level: TRACE
+        handlers:
+          - CONSOLE

@@ -32,110 +32,95 @@
 
 package de.atron.todos.business.dao;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import de.atron.todos.business.entity.Filter;
 import de.atron.todos.business.entity.Task;
-import de.atron.todos.business.rest.GlobalExceptionMapper;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Stateless
 @TransactionAttribute(TransactionAttributeType.REQUIRED)
 public class TaskDao implements ITaskDao {
 
-	final static Logger logger = LoggerFactory.getLogger(TaskDao.class);
-	
-	@PersistenceContext
-	EntityManager entityManager;
+    final static Logger logger = LoggerFactory.getLogger(TaskDao.class);
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see de.atron.todos.business.dao.ITaskDao#listAll()
-	 */
-	@Override
-	public List<Task> listAll() {
-		logger.info("listAll - start");
-		return entityManager.createNamedQuery("Task.findAll", Task.class).getResultList();
-	}
+    @PersistenceContext
+    EntityManager entityManager;
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * de.atron.todos.business.dao.ITaskDao#filterAll(de.atron.todos.business.
-	 * entity.Filter)
-	 */
-	@Override
-	public List<Task> filterAll(final Filter filter) {
-		List<Task> listAll = listAll();
-		List<Task> result = new ArrayList<>();
-		for (Task t : listAll) {
-			if (filter.matches(t)) {
-				result.add(t);
-			}
-		}
-		return result;
-		// return
-		// listAll().parallelStream().filter(filter::matches).collect(Collectors.toList());
-	}
+    /*
+     * (non-Javadoc)
+     * 
+     * @see de.atron.todos.business.dao.ITaskDao#listAll()
+     */
+    @Override
+    public List<Task> listAll() {
+        TaskDao.logger.info("listAll - start");
+        return this.entityManager.createNamedQuery("Task.findAll", Task.class).getResultList();
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see de.atron.todos.business.dao.ITaskDao#get(long)
-	 */
-	@Override
-	public Task get(final long taskId) {
-		return entityManager.find(Task.class, taskId);
-	}
+    // @Override
+    // public List<Task> filterAll(final Filter filter) {
+    // List<Task> listAll = listAll();
+    // List<Task> result = new ArrayList<>();
+    // for (Task t : listAll) {
+    // if (filter.matches(t)) {
+    // result.add(t);
+    // }
+    // }
+    // return result;
+    // }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * de.atron.todos.business.dao.ITaskDao#save(de.atron.todos.business.entity.
-	 * Task)
-	 */
-	@Override
-	public long save(final Task task) {
-		final Task managedTask = entityManager.merge(task);
-		entityManager.flush();
+    /*
+     * (non-Javadoc)
+     * 
+     * @see de.atron.todos.business.dao.ITaskDao#get(long)
+     */
+    @Override
+    public Task get(final long taskId) {
+        return this.entityManager.find(Task.class, taskId);
+    }
 
-		return managedTask.getId();
-	}
+    /*
+     * (non-Javadoc)
+     * 
+     * @see
+     * de.atron.todos.business.dao.ITaskDao#save(de.atron.todos.business.entity.
+     * Task)
+     */
+    @Override
+    public long save(final Task task) {
+        final Task managedTask = this.entityManager.merge(task);
+        this.entityManager.flush();
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see de.atron.todos.business.dao.ITaskDao#update(de.atron.todos.business.
-	 * entity.Task)
-	 */
-	@Override
-	public void update(final Task task) {
-		entityManager.merge(task);
-		entityManager.flush();
-	}
+        return managedTask.getId();
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see de.atron.todos.business.dao.ITaskDao#delete(long)
-	 */
-	@Override
-	public void delete(final long taskId) {
-		final Task managedTask = entityManager.find(Task.class, taskId);
-		entityManager.remove(managedTask);
-		entityManager.flush();
-	}
+    /*
+     * (non-Javadoc)
+     * 
+     * @see de.atron.todos.business.dao.ITaskDao#update(de.atron.todos.business.
+     * entity.Task)
+     */
+    @Override
+    public void update(final Task task) {
+        this.entityManager.merge(task);
+        this.entityManager.flush();
+    }
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see de.atron.todos.business.dao.ITaskDao#delete(long)
+     */
+    @Override
+    public void delete(final long taskId) {
+        final Task managedTask = this.entityManager.find(Task.class, taskId);
+        this.entityManager.remove(managedTask);
+        this.entityManager.flush();
+    }
 
 }
