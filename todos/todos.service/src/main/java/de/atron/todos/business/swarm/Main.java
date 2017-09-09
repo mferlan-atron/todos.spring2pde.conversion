@@ -12,7 +12,7 @@ public class Main {
         Level level = Level.DEBUG;
         String maxSize = "10m";
         Integer maxFiles = 10;
-        String logsDirectory = "I:/Users/ferlan/logs";
+        String logsDirectory = System.getProperty("swarm.logging.location", "target/logs");
         LoggingFraction loggingFraction = new LoggingFraction().consoleHandler(level, "COLOR_PATTERN")
             .formatter("PATTERN", "%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p [%t] (%c{1}) %s%e%n")
             .formatter("COLOR_PATTERN", "%K{level}%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p [%t] (%c{1}) %s%e%n")
