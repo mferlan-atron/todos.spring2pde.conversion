@@ -23,16 +23,20 @@
 			</column>
 		</createTable>
 	</changeSet>
-	
+
 	<changeSet author="mferlan" id="create_tasks_context">
 		<createTable tableName="TASKS_CONTEXTS" tablespace="TASKS">
-			<column name="TASK_ID" type="NUMBER(11,0)">
-				<constraints foreignKeyName="TASKS_CONTEXT_FK" 
-					nullable="false" referencedTableName="TASKS" referencedColumnNames="ID"/>
+			<column name="TASKS_ID" type="NUMBER(11,0)">
+				<constraints foreignKeyName="TASKS_CONTEXT_FK" nullable="false"
+					referencedTableName="TASKS" referencedColumnNames="ID" />
 			</column>
 			<column name="CONTEXTS" type="VARCHAR(255)">
 				<constraints nullable="false" />
 			</column>
 		</createTable>
-	</changeSet>	
+	</changeSet>
+
+	<changeSet author="mferlan" id="create_hbn_sequence">
+    	<createSequence sequenceName="hibernate_sequence" startValue="1" incrementBy="1"/>
+	</changeSet>
 </databaseChangeLog>
