@@ -1,0 +1,34 @@
+version: '3'
+
+services: 
+  todos-service:
+    image: todos.service
+    ports:
+      - 18090:8090
+    networks:
+      apps:
+        aliases:
+          - todos-service      
+  todos-filter:
+    image: todos.filter
+    links:
+      - todos-service
+    ports:
+      - 18091:8091
+    environment:
+      - todos_service_port=8090
+      - todos_service_host=todos-service
+    networks:
+      apps:
+        aliases:
+          - todos-filter      
+  todos-webapp:
+    image: todos.webapp
+    links:
+      - todos-service
+      - todos-filter
+    ports:
+      - 18080:8080
+      
+networks:
+  apps:

@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>todos</groupId>
 	<artifactId>todos</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<modules>
@@ -157,5 +157,5 @@
 				<wildfly-swarm.useUberJar>true</wildfly-swarm.useUberJar>
 			</properties>
 		</profile>
-	</profiles>
+  </profiles>
 </project>

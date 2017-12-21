@@ -38,6 +38,10 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import javax.ejb.Stateless;
 import javax.validation.Valid;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import de.atron.todos.jaxrs.client.JaxRsClientInvocationHandler;
 import de.atron.todos.resources.FilterDTO;
 import de.atron.todos.resources.FiltersResource;
@@ -46,13 +50,20 @@ import de.atron.todos.resources.TasksResource;
 
 @Stateless
 public class FiltersResourceImpl implements FiltersResource {
+	Logger logger = LoggerFactory.getLogger(getClass());
 
     TasksResource tasksProxy;
 
     {
-        this.tasksProxy = (TasksResource)Proxy.newProxyInstance(getClass().getClassLoader(), new Class<?>[] {
+    	String hostname = System.getenv("todos_service_host");
+    	hostname = hostname == null ? "localhost" : hostname;
+    	String port = System.getenv("todos_service_port");
+    	port = port == null ? "8090" : port;
+        String host = hostname + ":" + port;
+        logger.info("Creating client for {}", host );
+		this.tasksProxy = (TasksResource)Proxy.newProxyInstance(getClass().getClassLoader(), new Class<?>[] {
             TasksResource.class,
-        }, new JaxRsClientInvocationHandler(TasksResource.class, "http", "localhost:8090", "resources"));
+        }, new JaxRsClientInvocationHandler(TasksResource.class, "http", host, "resources"));
     }
 
     @Override

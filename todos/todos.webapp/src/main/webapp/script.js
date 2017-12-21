@@ -40,8 +40,8 @@ de.atron = {};
 de.atron.todos = {
 
     filterQuery: null,
-    tasksUrl: 'http://localhost:8090/resources/tasks/',
-    filterUrl: 'http://localhost:8180/resources/filters/',
+    tasksUrl: 'http://localhost:18090/resources/tasks/',
+    filterUrl: 'http://localhost:18091/resources/filters/',
 
     $loading: null,
     $addTaskInput: null,
